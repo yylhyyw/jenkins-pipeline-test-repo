@@ -11,12 +11,14 @@ pipeline{
       parallel {
         stage('parallel step 1') {
             steps {
-              sh "cp 100MB.bin 10.bin"
+              sh "ls"
+              sh "cp 1GB.bin 10.bin"
             }
         }
         stage('parallel step 2') {
             steps {
-              sh "cp 100MB.bin 10.bin"
+              sh "ls"
+              sh "cp 1GB.bin 10.bin"
             }
         }
       }
