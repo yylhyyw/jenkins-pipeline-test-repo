@@ -2,7 +2,7 @@ pipeline{
   agent any
   
   stages {
-    stage('download) {
+    stage('download') {
       steps {
         sh "curl -k -C - -O https://speed.hetzner.de/100MB.bin"
       }
