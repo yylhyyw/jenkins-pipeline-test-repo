@@ -2,16 +2,21 @@ pipeline{
   agent any
   
   stages {
+    stage('download) {
+      steps {
+        sh "curl -k -C - -O https://speed.hetzner.de/100MB.bin"
+      }
+    }
     stage('test') {
       parallel {
         stage('parallel step 1') {
             steps {
-              sh "curl -k -C - -O https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/23.4.11.2/vosp-api-wrappers-java-23.4.11.2.jar"
+              sh "cp 100MB.bin 10.bin"
             }
         }
         stage('parallel step 2') {
             steps {
-              sh "curl -k -C - -O https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/23.4.11.2/vosp-api-wrappers-java-23.4.11.2.jar"
+              sh "cp 100MB.bin 10.bin"
             }
         }
       }
